@@ -1,6 +1,8 @@
 *.swp
 *~
-wssspe13-ged.aux
-wssspe13-ged.bbl
-wssspe13-ged.blg
-wssspe13-ged.log
+*.aux
+*.bbl
+*.blg
+*.log
+*.pdf
+*.out
