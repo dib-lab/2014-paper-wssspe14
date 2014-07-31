@@ -1,26 +1,3 @@
-%% Editorial Revision Requests:
-%% A deeper exploration of the Khmer lifecycle, as noted by the reviewer, would
-%% strengthen the paper
-
-%% Additional major revisions as noted by the reviewer
-%% should be considered optional, but the paper's discussion of the khmer
-%% lifecycle and its ``growing pains'' would better adjust it to fit with the
-%% collection
-
-%% Minor revisions:
-%% Some reordering of discussion
-%% Extension of the abstract
-%% Additional citations as noted in reviewer comments
-
-%% 'detailed and deeper information about the tool’s growth such as users, 
-%% communities, usage statistics, effort areas would be interesting and 
-%% informative'
-
-% 'the language of the paper feels too informal and should be improved.
-% Colloquialisms should be avoided such as: ``bioinformaticians invent a
-% new format every 5 minutes on average''
-
-
 \documentclass[12pt]{article}
 \usepackage{simplemargins}
 \usepackage{times}
@@ -41,7 +18,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.70ex}
 \setallmargins{1in}
-\title{Channeling community contributions to scientific software: a hackathon experience}
+\title{Channeling community contributions to scientific software: a sprint experience}
 
 \author{Michael R. Crusoe$^{1}$\\
 C. Titus Brown$^{1,2\ast}$\\
@@ -74,7 +51,242 @@ C. Titus Brown$^{1,2\ast}$\\
 
 \section{Introduction}
 
-We have been granted a week-long extension so that we can do the
-hackathon on July 22nd and July 23rd --CTB and MRC.
+% @CTB maybe change title.
+Sustainable development of scientific software inevitably depends on
+following good software development practices.  However, even
+rudimentary development practices such as version control and testing
+are rarely a formal part of scientific training.  One way to learn
+these practices is to participate in an open source project, which
+often provide a path for new contributors to get involved.  Open
+source {\em scientific} software projects can go further, by providing
+scientists the opportunity to work on a science-focused project.
+
+In July 2014, Mozilla Science Labs ran a two-day global ``sprint'' for
+a wide variety of software projects. As part of this sprint, the khmer
+project offered a mentored software contribution experience.  The
+khmer project is a bioinformatics library developed primarily at
+Michigan State University, and it uses open source software
+development practices (@cite our wssspe13 paper).  These practices
+include open development and code review on GitHub using GitHub
+Flow\footnote{http://scottchacon.com/2011/08/31/github-flow.html}, the
+maintenance of a large suite of unit and functional tests, continuous
+integration, formal release testing, and semantic versioning.  The two
+authors of this paper, MRC and CTB, are respectively the lead software
+engineer and the principle investigator on the NIH grant that funds
+MRC and khmer development.
+
+We had several concerns when organizing our part of the sprint.  We
+were uncertain how to target the list of issues for an unknown number
+of developers with a potentially wide range of development experience.
+We were also concerned that our development process involved too many
+steps for new developers to work through.  And, finally, we were
+unsure of whether this would be an effective use of our time.  Despite
+these reservations, we felt that this was a good trial opportunity.
+In particular, we hoped to use new developers to expose problems in
+our documentation and software.  We also took advantage of the sprint
+to ask local lab members to go through the development process
+themselves.
+
+In the end, the two-day sprint was a modest success: we merged 13
+contributions from 9 distinct contributors into the master development
+branch; we solved a previously unappreciated installation problem with
+our software; and we revamped our development documentation to include
+a detailed guide to getting started.  Overall, we felt that the sprint
+was a very useful investment of our time and energy and are looking
+forward to future sprints.
+
+Below, we describe the pre-sprint preparation, the sprint itself, and the
+post-sprint outcomes.  We then provide some concluding thoughts.
+
+%concerns:
+
+%too complicated a process
+%wide range of experience
+%expenditure of our time
+
+%but:
+%opportunity to get labbies on bandwagon
+%make people run through our stuff in a focused and systematic way
+%take opp to revise documentation
+%attempt to socialize new contributors to process
+
+\section{Pre-sprint preparation}
+
+We announced the sprint in a blog
+post\footnote{http://ivory.idyll.org/blog/2014-khmer-hackathon.html},
+and provided an issue on our GitHub issue tracker for people to
+subscribe to.  This provided a more specific notification channel than
+a mailing list for us to use in informing contributors of our plans,
+and also ensured that interested parties already had a GitHub account.
+
+We next designated a set of issues with a ``low-hanging fruit'' tag.
+These issues were chosen (or in some cases designed) to be
+entry-level: they required no biology or bioinformatics knowledge, and
+no prior experience with the khmer project was needed.  The issues
+targeted a range of Python, C++, and documentation changes.  For
+example, one issue involved replacing a C++ stdlib exception with a
+khmer specific one, while another issue required copying an existing
+test and making a minor modification.
+
+Finally, we wrote a detailed walk-through for new contributors
+\footnote{http://khmer.readthedocs.org/en/docs-hackathon/dev/getting-started.html}.
+This walk-through assumed some prior command-line expertise and basic
+familiarity with git, but otherwise required no particular familiarity
+with GitHub, GitHub Flow, khmer installation, or anything specific to
+khmer development.  Crucially, much of this workflow was written to be
+copy-paste at the command line, which avoided the burdensome
+requirement for inexperienced developers to compose many new commands.
+
+The workflow covered twenty five distinct steps and included forking
+a copy of khmer on GitHub, cloning it locally, building khmer, running
+the tests, claiming an issue, making changes and committing them,
+verifying the changes by running the tests again, pushing back to
+GitHub, and going through continuous integration, code review, and
+our development checklist.
+
+% @mention GitHub flow with a link.
+
+\section{During the sprint}
+
+During the sprint, we revised the issue and our documentation regularly
+as contributors experienced problems.  CTB primarily focused on updating
+the documentation while MRC primarily interacted with remote and local
+developers.
+
+We found that remote developers were hesitant to engage one-on-one despite
+repeated offers.
+
+MRC found that it was difficult to balance detailed code review with
+the many different demands on his time as multiple contributors updated
+issues, encountered problems, and had questions.
+
+IRC did not work that well for us.  The nonlinearity of IRC conversations
+as well as the general unfamiliarity of participants with IRC meant that
+IRC was frequently more of a distraction than a benefit.
+
+We had little interaction over video, as many participants were not at
+one of the video sites.  As with IRC, the video was frequently more of
+a distraction than a specific benefit, although as part of the larger
+sprint, it did help to build a sense of community.
+
+We used Twitter to announce first-time contributors on the first day, and
+CTB provided a running commentary as issues came up and were addressed.
+
+A number of experts from other projects got involved.  A particularly
+rewarding interaction was with Trent Nelson from Continuum, who participated
+locally and worked with us to package khmer as a conda-installable package.
+
+The most important issue that surfaced during the sprint was that our
+test running commands simply didn't work for many.  We had included
+some installation commands in the 'make test' command that depended on
+certain versions of Python build infrastructure.  Many of our sprint
+participants ran into this problem in the first two hours of the
+sprint, leading us to debug and change the installation commands live,
+and then update the instructions.
+
+We also found that many contributors did not reliably follow the
+detailed instructions.  This was not surprising -- 25 steps is quite a
+lot! -- but we couldn't find a way to simplify our workflow, either.
+However, because we were providing support in real time, we could
+almost always give useful feedback to help participants discover which
+steps they had missed and correct them.  A longer feedback cycle might
+have led to many orphaned pull requests as contributors gave up on our
+workflow.
+
+@regression story @MRC
+
+\section{Post-sprint feedback and actions}
+
+We had 9 participants who both started and finished a total of 13 pull
+requests during the sprint; five were remote, and four were
+local. None of them had experienced GitHub Flow before, and most had
+no prior exposure to testing or code review.  Several participants
+expressed enthusiasm for having gone through the process.
+% @Justin and Jaron's comments
+A further 3 participants are still working on finishing pull requests
+started during the sprint.
+
+We are further revising the documentation after post-sprint review, to
+better link different sections and refine sections that were updated
+hastily during the sprint.
+
+\section{Discussion and concluding thoughts}
+
+We felt that the most valuable part of the sprint was in setting aside
+this focused time for in-lab problem solving and collaboration.  Most of
+the khmer developers were in the room together and when a problem
+needed to be discussed (e.g. the installation problem) it was easy to
+hold an impromptu meeting.  This is different from our usual lab
+development process which is largely asynchronous.
+
+The rapid, systematic review, improvement and testing of documentation
+was tremendously valuable; having put 10 or more participants through
+our ``getting started'' documentation means that we are now certain
+that the instructions work!  However, more observation of
+inexperienced contributors will undoubtedly lead to areas where can
+optimize the documentation for first-time participants.
+
+In the long term, we do not expect many, or perhaps any, of the sprint
+participants to continue developing on khmer.  None of the
+participants external to the lab worked in our subfield of biology,
+and khmer itself has a fairly narrow set of functionality.  However,
+we can guess that because of the improved documentation, khmer will
+now be better able to attract contributions from developers who {\em
+  are} interested in longer-term engagement with the project.
+
+We also hope that the sprint participants will use their new experience
+with GitHub, distributed version control, and remote development to
+contribute to other open source projects.  We will track their
+GitHub activity on public projects to see if there is additional
+engagement after the sprint.
+
+The biggest unresolved challenge is how to more effectively walk
+participants through their first contribution.  While 25 steps may
+seem overly complex, each step is an important part of the development
+cycle; experienced software developers may elide many of the steps
+mentally (``of {\em course} I run the tests after each commit!'') but
+they are all necessary.  This complexity illuminates the challenge
+facing scientists who want to learn basic software development
+practices: each development practice (e.g. using version control, or
+testing, or code review) requires that many different steps be
+executed in combination.  Our experience from the sprint suggests
+that participants can be taught to execute these steps fairly easily,
+if sufficient time and support is provided.
+
+% @do we have any information on how long each step took?
+
+% @mrc, can you talk about the regression that was introduced and then
+% discovered?
+
+In conclusion,
+
+we needed quite a bit of infrastructure to make this all work.
+Process documentation, issue tracking, tests, reliable build and test
+instructions, and mechanisms for support were all important.
+% @can we link to ``debt'' concept?
+
+The getting-started guide and the low-hanging-fruit issues provide an
+excellent entree into our software project that remains after the sprint.
+
+%@address this in the conclusion: modern development is just too complex to
+% learn on own easily, need these mentored foo.
+
+%This is how science should be done, but training needed.
+
+%regression detected udring sprint
+
+%need surprising amount of infrastructure to participate in sprint!
+%also note that several people in the lab had served as rel managers
+
+%@vaguery comment on how other peopel doing it
+
+%in terms of reward: Outsiders incidental; Insiders good.  Outsiders found
+%bugs, but insiders now know process.
+
+We are looking forward to future sprints and would like to involve more
+scientific software development groups in teaching others about their
+development workflows.
+
+% @figure <= project perspective 
 
 \end{document}
