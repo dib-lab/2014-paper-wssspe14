@@ -31,18 +31,18 @@ C. Titus Brown$^{1,2\ast}$\\
 \maketitle
 \thispagestyle{firststyle}
 
-\abstract{The khmer software project provides both research and
-  production functionality for large-scale nucleic-acid sequence
-  analysis.  In 2014, we participated in a two-day global sprint
-  coordinated by the Mozilla Science Labs, and offered a mentored
-  experience in contributing to a scientific software project.  We
-  provided entry-level tasks and worked with contributors as they
-  claimed issues, created new branches, committed changes, issued pull
-  requests, went through code review, and iterated until their
-  contributions were merged.  In this experience paper, we describe
-  the process, relate anecdotal experiences, and suggest frameworks
-  for other projects that want to attract entry-level contributors.
-  The khmer software is developed openly at {\sf
+\abstract{In 2014, the khmer software project participated in a
+  two-day global sprint coordinated by the Mozilla Science Lab. We
+  offered a mentored experience in contributing to a scientific
+  software project for anyone who was interested.  We provided
+  entry-level tasks and worked with contributors as they worked
+  through our development process.  The experience was successful on
+  both a social and a technical level, bringing in 13 contributions
+  from 9 new contributors and validating our development process.  In
+  this experience paper we describe the sprint preparation and
+  process, relate anecdotal experiences, and draw conclusions about
+  what other projects could do to enable a similar outcome.  The khmer
+  software is developed openly at {\sf
     http://github.com/ged-lab/khmer/}.}
 
 \setlength{\parindent}{0pt}
@@ -58,11 +58,11 @@ rudimentary development practices such as version control and testing
 are rarely a formal part of scientific training.  One way to learn
 these practices is to participate in an open source project, which
 often provide a path for new contributors to get involved.  Open
-source {\em scientific} software projects can go further, by providing
+source {\em scientific} software projects can go further by providing
 scientists the opportunity to work on a science-focused project.
 
-In July 2014, Mozilla Science Labs ran a two-day global ``sprint'' for
-a wide variety of software projects. As part of this sprint, the khmer
+In July 2014, Mozilla Science Lab ran a two-day global ``sprint'' for
+a wide variety of software projects. As part of this sprint the khmer
 project offered a mentored software contribution experience.  The
 khmer project is a bioinformatics library developed primarily at
 Michigan State University, and it uses open source software
@@ -79,21 +79,29 @@ We had several concerns when organizing our part of the sprint.  We
 were uncertain how to target the list of issues for an unknown number
 of developers with a potentially wide range of development experience.
 We were also concerned that our development process involved too many
-steps for new developers to work through.  And, finally, we were
-unsure of whether this would be an effective use of our time.  Despite
-these reservations, we felt that this was a good trial opportunity.
-In particular, we hoped to use new developers to expose problems in
-our documentation and software.  We also took advantage of the sprint
-to ask local lab members to go through the development process
-themselves.
+steps for new developers to work through.  Finally, we were unsure of
+whether this would be an effective use of our time.  Despite these
+reservations, we felt that this was a good opportunity to use new
+developers to expose problems in our documentation and software.  We
+also took advantage of the sprint to ask local lab members to go
+through the development process themselves.
 
-In the end, the two-day sprint was a modest success: we merged 13
-contributions from 9 distinct contributors into the master development
-branch; we solved a previously unappreciated installation problem with
-our software; and we revamped our development documentation to include
-a detailed guide to getting started.  Overall, we felt that the sprint
-was a very useful investment of our time and energy and are looking
-forward to future sprints.
+The global sprint was organized as follows. ... The goal was to provide
+supportive environment in which to collaborate on open science projects
+and encourage contributions from new people.  Standard work hours,
+breaks for lunch and snacks, and an emphasis on acknowledging a diversity
+of contributions were all part of the setup.  There was also a pan-site
+Code of Conduct provided, which was widely advertised and may have led
+to more significant buy-in from certain communities.
+
+In the end, the two-day sprint was a modest success technically, and a
+big success socially. We merged 13 contributions from 9 distinct
+contributors into the master development branch; we solved a
+previously unappreciated installation problem with our software; and
+we revamped our development documentation to include a detailed guide
+to getting started.  Overall, we felt that the sprint was a very
+useful investment of our time and energy and are looking forward to
+future sprints.
 
 Below, we describe the pre-sprint preparation, the sprint itself, and the
 post-sprint outcomes.  We then provide some concluding thoughts.
@@ -114,10 +122,13 @@ post-sprint outcomes.  We then provide some concluding thoughts.
 
 We announced the sprint in a blog
 post\footnote{http://ivory.idyll.org/blog/2014-khmer-hackathon.html},
-and provided an issue on our GitHub issue tracker for people to
-subscribe to.  This provided a more specific notification channel than
-a mailing list for us to use in informing contributors of our plans,
-and also ensured that interested parties already had a GitHub account.
+broadcast the blog post via Twitter, evangelized it at two
+conferences, and entered it into the Mozilla Science Lab project list.
+We then provided an issue on our GitHub issue tracker for people to
+subscribe to for updates.  This provided a more specific
+notification channel than a mailing list for us to use in informing
+contributors of our plans, and also ensured that interested parties
+already had a GitHub account.
 
 We next designated a set of issues with a ``low-hanging fruit'' tag.
 These issues were chosen (or in some cases designed) to be
@@ -137,14 +148,13 @@ khmer development.  Crucially, much of this workflow was written to be
 copy-paste at the command line, which avoided the burdensome
 requirement for inexperienced developers to compose many new commands.
 
-The workflow covered twenty five distinct steps and included forking
-a copy of khmer on GitHub, cloning it locally, building khmer, running
+The workflow covered twenty five distinct steps and included forking a
+copy of khmer on GitHub, cloning it locally, building khmer, running
 the tests, claiming an issue, making changes and committing them,
 verifying the changes by running the tests again, pushing back to
-GitHub, and going through continuous integration, code review, and
-our development checklist.
-
-% @mention GitHub flow with a link.
+GitHub, and going through continuous integration and code review.  We
+required that each contributor completed all the items on our
+development checklist, just like any other contributor.
 
 \section{During the sprint}
 
@@ -153,21 +163,21 @@ as contributors experienced problems.  CTB primarily focused on updating
 the documentation while MRC primarily interacted with remote and local
 developers.
 
-We found that remote developers were hesitant to engage one-on-one despite
-repeated offers.
+Community feeling.  MSU participants without a direct tie to the lab.
+Friendly, welcoming physical environment.
 
 MRC found that it was difficult to balance detailed code review with
 the many different demands on his time as multiple contributors updated
 issues, encountered problems, and had questions.
 
-IRC did not work that well for us.  The nonlinearity of IRC conversations
-as well as the general unfamiliarity of participants with IRC meant that
-IRC was frequently more of a distraction than a benefit.
+IRC provided a real-time venue for private and group chat that supported
+our issue-driven process.
+@define IRC.
 
-We had little interaction over video, as many participants were not at
-one of the video sites.  As with IRC, the video was frequently more of
-a distraction than a specific benefit, although as part of the larger
-sprint, it did help to build a sense of community.
+We had little direct interaction over video, because we were a small part
+of the larger Mozilla Science Lab sprint.  However, the sense of community
+and cooperation was greatly enhanced by the presence of the always-on
+video wall.
 
 We used Twitter to announce first-time contributors on the first day, and
 CTB provided a running commentary as issues came up and were addressed.
@@ -193,7 +203,11 @@ steps they had missed and correct them.  A longer feedback cycle might
 have led to many orphaned pull requests as contributors gave up on our
 workflow.
 
-@regression story @MRC
+Our in-person contributors included someone from industry who took
+vacation days to attend the sprint; several people loosely affiliated
+with the lab but who had not previously contributed to the codebase;
+and another member of the MSU community who was unaffiliated with
+our lab.
 
 \section{Post-sprint feedback and actions}
 
@@ -260,6 +274,11 @@ if sufficient time and support is provided.
 
 In conclusion,
 
+the presence of existing process and infrastructure let us work with
+new contributors more easily than we would have been able to a year
+ago: they got more done.  In turns this meant that we could leverage
+their contributions more easily: we gained more from what they did.
+
 we needed quite a bit of infrastructure to make this all work.
 Process documentation, issue tracking, tests, reliable build and test
 instructions, and mechanisms for support were all important.
@@ -283,10 +302,17 @@ excellent entree into our software project that remains after the sprint.
 %in terms of reward: Outsiders incidental; Insiders good.  Outsiders found
 %bugs, but insiders now know process.
 
+The amount of organization needed was small compared to the 
+
+The in-room experience was very cooperative and collaborative.
+
 We are looking forward to future sprints and would like to involve more
 scientific software development groups in teaching others about their
 development workflows.
 
 % @figure <= project perspective 
+
+% @define Github
+% @define git
 
 \end{document}
