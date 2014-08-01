@@ -12,7 +12,7 @@
 }
 \pagestyle{empty}
 
-\date{April 2014}
+\date{August 2014}
 
 
 \setlength{\parindent}{0pt}
@@ -66,13 +66,13 @@ a wide variety of software projects. As part of this sprint the khmer
 project offered a mentored software contribution experience.  The
 khmer project is a bioinformatics library developed primarily at
 Michigan State University, and it uses many open source software
-development practices \cite{khmer,2013-wssspe13}.  These practices include
-open development and code review on GitHub using GitHub Flow
-\cite{githubflow}, the maintenance of a large suite of unit and
-functional tests, continuous integration, formal release testing, and
-semantic versioning.  The two authors of this paper, MRC and CTB, are
-respectively the lead software engineer and the principle investigator
-on the NIH grant that funds MRC and khmer development.
+development practices \cite{khmer,2013-wssspe13}.  These practices
+include open development and code review on GitHub using a workflow
+called GitHub Flow \cite{githubflow}, the maintenance of a large suite
+of unit and functional tests, continuous integration, formal release
+testing, and semantic versioning.  The two authors of this paper, MRC
+and CTB, are respectively the lead software engineer and the principle
+investigator on the NIH grant that funds MRC and khmer development.
 
 We had several concerns when organizing our part of the sprint.  We
 were uncertain how to target the list of issues for an unknown number
@@ -113,7 +113,7 @@ post-sprint outcomes.  We then provide some concluding thoughts.
 
 \section{Pre-sprint preparation}
 
-We announced the sprint in a blog post \cite{bogpost}, broadcast the
+We announced the sprint in a blog post \cite{blogpost}, broadcast the
 blog post via Twitter, evangelized it at two conferences, and entered
 it into the Mozilla Science Lab project list.  We then provided an
 issue on our GitHub issue tracker for people to subscribe to for
@@ -130,13 +130,15 @@ example, one issue involved replacing a C++ stdlib exception with a
 khmer specific one, while another issue required copying an existing
 test and making a minor modification.
 
-Finally, we wrote a detailed walk-through for new contributors.\footnote{http://khmer.readthedocs.org/en/docs-hackathon/dev/getting-started.html}
+Finally, we wrote a detailed walk-through for new
+contributors.\footnote{http://khmer.readthedocs.org/en/docs-hackathon/dev/getting-started.html}
 This walk-through assumed some prior command-line expertise and basic
 familiarity with git, but otherwise required no particular familiarity
-with GitHub, GitHub Flow, khmer installation, or anything specific to
-khmer development.  Crucially, much of this workflow was written to be
-copy-paste at the command line, which avoided the burdensome
-requirement for inexperienced developers to compose many new commands.
+with GitHub, the GitHub Flow process, khmer installation, or anything
+specific to khmer development.  Crucially, much of this workflow was
+written to be copy-paste at the command line, which avoided the
+burdensome requirement for inexperienced developers to compose many
+new commands.
 
 The workflow covered twenty five distinct steps and included forking a
 copy of khmer on GitHub, cloning it locally, building khmer, running
@@ -286,5 +288,15 @@ development workflows.
 
 % @define Github
 % @define git
+
+\section*{Acknowledgments}
+
+MRC has been funded by AFRI Competitive Grant no. 2010-65205-20361
+from the USDA NIFA and is now funded by the National Human Genome
+Research Institute of the National Institutes of Health under Award
+Number R01HG007513; both to C. Titus Brown.
+
+\bibliographystyle{plain}
+\bibliography{2014-wssspe14}
 
 \end{document}
