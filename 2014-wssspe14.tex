@@ -12,7 +12,7 @@
 }
 \pagestyle{empty}
 
-\date{August 2014}
+\date{June 2016}
 
 
 \setlength{\parindent}{0pt}
@@ -25,7 +25,7 @@ C. Titus Brown$^{1,2\ast}$\\
 \small \bf{1} Microbiology and Molecular Genetics,\\
 \small \bf{2} Computer Science and Engineering,\\
 \small Michigan State University, East Lansing, MI, USA\\
-\small $\ast$ Corresponding author: ctb@msu.edu}
+\small $\ast$ Corresponding author: ctbrown@ucdavis.edu}
 
 \begin{document}
 \maketitle
@@ -43,7 +43,7 @@ C. Titus Brown$^{1,2\ast}$\\
   process, relate anecdotal experiences, and draw conclusions about
   what other projects could do to enable a similar outcome.  The khmer
   software is developed openly at {\sf
-    http://github.com/ged-lab/khmer/}.}
+    http://github.com/dib-lab/khmer/}.}
 
 \setlength{\parindent}{0pt}
 \setlength{\parindent}{0pt}
@@ -61,7 +61,7 @@ often provide a path for new contributors to get involved.  Open
 source {\em scientific} software projects can go further by providing
 scientists the opportunity to work on a science-focused project.
 
-In July 2014, Mozilla Science Lab ran a two-day global ``sprint'' for
+In July 2014, Mozilla Science Lab (MSL) ran a two-day global ``sprint'' for
 a wide variety of software projects. As part of this sprint the khmer
 project offered a mentored software contribution experience.  The
 khmer project is a bioinformatics library developed primarily at
@@ -73,6 +73,20 @@ of unit and functional tests, continuous integration, formal release
 testing, and semantic versioning.  The two authors of this paper, MRC
 and CTB, are respectively the lead software engineer and the principle
 investigator on the NIH grant that funds MRC and khmer development.
+
+The basic motivating principle of many scientific hackathons and
+datathons is to gather a group of people together to work in a
+focused, coherent way on one or more projects (reviewed in
+\cite{Trainer:2014:CCE:2660398.2660420}).  Our primary goal for
+participating in the MSL sprint was not to make significant progress
+on the technical aspects of the code, but rather to train scientists
+in version control and code review and improve our documentation and
+processes so as to lower the barriers to entry for new developers to
+our project.  In this case, we took advantage of the distributed
+nature of the Mozilla event to recruit participants globally, with no
+travel required.  We also decided not to focus on expert scientists or
+developers, but rather on participants who were interested in but
+perhaps not engaged in open science or open source practices.
 
 We had several concerns when organizing our part of the sprint.  We
 were uncertain how to target the list of issues for an unknown number
@@ -279,6 +293,17 @@ testing, or code review) requires that many different steps be
 executed in combination.  Our experience from the sprint suggests that
 participants can be taught to execute these steps fairly easily, if
 sufficient time and support is provided.
+
+Future revisions to our on-boarding documentation could simplify the
+documentation in a few ways by eliminating optional steps (e.g. our
+current documentation provides instructions for using ccache).  Apart
+from that, we could more formally study the ``first-time contributor''
+workflow by working with people as they go through it, to see where
+mistakes are commonly made.  We are wary of oversimplifying, however,
+because simplifying further could result in increased maintenance
+burden on our part, and also diminish the ability of people to
+transition from our project (which uses a fairly standard GitHub-flow
+based workflow \cite{githubflow}) to others.
 
 We are looking forward to future sprints and would like to involve more
 scientific software development groups in teaching others about their
