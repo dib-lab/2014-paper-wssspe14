@@ -8,4 +8,6 @@ all: 2014-wssspe14.pdf
 
 clean:
 	-rm 2014-wssspe14.pdf
-	
+
+install-deps:
+	apt install texlive-latex-extra texlive-latex-base
